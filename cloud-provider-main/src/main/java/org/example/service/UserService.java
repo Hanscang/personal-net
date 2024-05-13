@@ -10,7 +10,7 @@ import org.example.entities.User;
  */
 
 public interface UserService {
-    User getByID(Integer id);
+    User getByID(int id);
 
     boolean addByUser(User user);
 }

@@ -14,9 +14,9 @@ import org.example.entities.User;
  */
 @Mapper
 public interface UserMapper {
-    @Select("select * from user where id = #{id}")
-    User getByID(@Param("id")Integer id);
+    @Select("select * from t_user where id = #{id}")
+    User getByID(@Param("id")int id);
 
-    @Insert("insert into user values(default,#{name},#{phone},#{sex})")
+    @Insert("insert into t_user values(default,#{name},#{phone},#{sex})")
     int addByUser(User user);
 }
