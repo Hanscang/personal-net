@@ -22,7 +22,7 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/user/get/{id}")
-    public CommonResult<User> getByID(@PathVariable("id")int id){
+    public CommonResult<User> getByID(@PathVariable("id")Integer id){
         User user = userService.getByID(id);
         log.info("******* 查询结果 *******" + user);
         if(user != null){

@@ -1,5 +1,6 @@
 package org.example.entities.dto;
 
+import org.example.entities.Biographic.BiographicalBasicInfo;
 import org.example.entities.Biographic.Experience;
 
 import java.util.Date;
@@ -12,6 +13,18 @@ import java.util.List;
  * @date 2024/5/13 22:50
  */
 public class BiographicalNote {
+    public BiographicalNote(BiographicalBasicInfo basicInfo, List<Experience> experiences) {
+        this.setId(basicInfo.getId());
+        this.setName(basicInfo.getName());
+        this.setBirthday(basicInfo.getBirthday());
+        this.setEmail(basicInfo.getEmail());
+        this.setUniversity(basicInfo.getUniversity());
+        this.setGraduationDate(basicInfo.getGraduationDate());
+        this.setSex(basicInfo.getSex());
+        this.setsKill(basicInfo.getsKill());
+        this.setExperiences(experiences);
+    }
+
     private int id;
     private String name;
     private Date birthday;

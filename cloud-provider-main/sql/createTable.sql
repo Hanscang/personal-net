@@ -18,9 +18,9 @@ CREATE TABLE t_biographical_notes (
     birthday DATE,
     email varchar(64),
     university varchar(64),
-    graduation_date DATA,
+    graduation_date DATE,
     sex varchar(8),
-    skill varchar(1024),
+    skill varchar(1024)
 
 );
 
