@@ -13,6 +13,9 @@ import org.example.entities.Biographic.BiographicalBasicInfo;
 @Mapper
 public interface BiographicalBasicInfoMapper {
     @Select("select * from t_biographical_notes where id = #{id}")
+    @Results({
+            @Result(column = "graduation_date", property = "graduationDate")
+    })
     BiographicalBasicInfo getById(@Param("id")int id);
 
     @Insert("insert into t_biographical_notes values(default,#{name},#{birthday},#{email},#{university},#{graduation_date},#{sex},#{skill})")

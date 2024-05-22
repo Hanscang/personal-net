@@ -1,3 +1,4 @@
+use personalnet;
 CREATE TABLE t_user (
     id INT PRIMARY KEY AUTO_INCREMENT, -- 主键
     name VARCHAR(20),
@@ -9,7 +10,8 @@ CREATE TABLE t_experience (
     id INT PRIMARY KEY AUTO_INCREMENT, -- 主键
     biographicId INT,
     title VARCHAR(32),
-    exp VARCHAR(1024)
+    exp VARCHAR(1024),
+    ord INT
 );
 
 CREATE TABLE t_biographical_notes (
@@ -24,4 +26,6 @@ CREATE TABLE t_biographical_notes (
 
 );
 
-    show tables
+
+
+show tables;

@@ -3,6 +3,7 @@ package org.example.entities.dto;
 import org.example.entities.Biographic.BiographicalBasicInfo;
 import org.example.entities.Biographic.Experience;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -14,12 +15,13 @@ import java.util.List;
  */
 public class BiographicalNote {
     public BiographicalNote(BiographicalBasicInfo basicInfo, List<Experience> experiences) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd/");
         this.setId(basicInfo.getId());
         this.setName(basicInfo.getName());
-        this.setBirthday(basicInfo.getBirthday());
+        this.setBirthday(simpleDateFormat.format(basicInfo.getBirthday()));
         this.setEmail(basicInfo.getEmail());
         this.setUniversity(basicInfo.getUniversity());
-        this.setGraduationDate(basicInfo.getGraduationDate());
+        this.setGraduationDate(simpleDateFormat.format(basicInfo.getGraduationDate()));
         this.setSex(basicInfo.getSex());
         this.setsKill(basicInfo.getsKill());
         this.setExperiences(experiences);
@@ -27,10 +29,10 @@ public class BiographicalNote {
 
     private int id;
     private String name;
-    private Date birthday;
+    private String birthday;
     private String email;
     private String university;
-    private Date graduationDate;
+    private String graduationDate;
     private String sex;
     private String sKill;
     private List<Experience> experiences;
@@ -51,11 +53,11 @@ public class BiographicalNote {
         this.name = name;
     }
 
-    public Date getBirthday() {
+    public String getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
 
@@ -75,11 +77,11 @@ public class BiographicalNote {
         this.university = university;
     }
 
-    public Date getGraduationDate() {
+    public String getGraduationDate() {
         return graduationDate;
     }
 
-    public void setGraduationDate(Date graduationDate) {
+    public void setGraduationDate(String graduationDate) {
         this.graduationDate = graduationDate;
     }
 

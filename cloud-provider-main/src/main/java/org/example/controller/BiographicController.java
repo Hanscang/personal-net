@@ -41,9 +41,9 @@ public class BiographicController {
         }
         else {
             ret.setCode(200);
+            ret.setData(note);
             ret.setMessage("请求成功");
         }
-        ret.setData(note);
         return ret;
     }
 }

@@ -11,6 +11,15 @@ public class Experience {
     private int biographicId;
     private String title;
     private String exp;
+    private int ord;
+
+    public int getOrd() {
+        return ord;
+    }
+
+    public void setOrd(int ord) {
+        this.ord = ord;
+    }
 
     public int getId() {
         return id;

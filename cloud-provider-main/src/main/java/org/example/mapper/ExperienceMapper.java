@@ -16,7 +16,7 @@ import java.util.List;
 @Mapper
 public interface ExperienceMapper {
 
-    @Select("select * from t_experience where id = #{id}")
+    @Select("select * from t_experience where biographicId = #{id} order by ord asc")
     List<Experience> getByBiographicId(@Param("id")int id);
 
     @Insert("insert into t_experience values(default,#{name},#{birthday},#{email},#{university},#{graduation_date},#{sex},#{skill})")
