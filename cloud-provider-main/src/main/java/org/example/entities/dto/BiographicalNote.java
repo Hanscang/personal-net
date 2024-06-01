@@ -2,9 +2,9 @@ package org.example.entities.dto;
 
 import org.example.entities.Biographic.BiographicalBasicInfo;
 import org.example.entities.Biographic.Experience;
+import org.example.utils.MaskUtils;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -15,15 +15,15 @@ import java.util.List;
  */
 public class BiographicalNote {
     public BiographicalNote(BiographicalBasicInfo basicInfo, List<Experience> experiences) {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd/");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/**/**");
         this.setId(basicInfo.getId());
         this.setName(basicInfo.getName());
         this.setBirthday(simpleDateFormat.format(basicInfo.getBirthday()));
-        this.setEmail(basicInfo.getEmail());
+        this.setEmail(MaskUtils.maskEmail(basicInfo.getEmail()));
         this.setUniversity(basicInfo.getUniversity());
         this.setGraduationDate(simpleDateFormat.format(basicInfo.getGraduationDate()));
         this.setSex(basicInfo.getSex());
-        this.setsKill(basicInfo.getsKill());
+        this.setSkill(basicInfo.getsKill());
         this.setExperiences(experiences);
     }
 
@@ -34,7 +34,7 @@ public class BiographicalNote {
     private String university;
     private String graduationDate;
     private String sex;
-    private String sKill;
+    private String skill;
     private List<Experience> experiences;
 
     public int getId() {
@@ -93,12 +93,12 @@ public class BiographicalNote {
         this.sex = sex;
     }
 
-    public String getsKill() {
-        return sKill;
+    public String getSkill() {
+        return skill;
     }
 
-    public void setsKill(String sKill) {
-        this.sKill = sKill;
+    public void setSkill(String sKill) {
+        this.skill = sKill;
     }
 
     public List<Experience> getExperiences() {
